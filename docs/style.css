@@ -1,0 +1,547 @@
+/* style.css - Design professionnel pour la page d'accueil M.A.R UNIKIN */
+
+:root {
+  --primary-color: #002b5c;
+  --secondary-color: #f57c00;
+  --background-light: #f9f9f9;
+  --text-color: #333;
+  --white: #ffffff;
+}
+
+body {
+margin: 0;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+background-color: var(--background-light);
+color: var(--text-color);
+line-height: 1.6;
+}
+
+.container {
+width: 90%;
+max-width: 1200px;
+margin: 0 auto;
+}
+
+/* HEADER */
+.header {
+background-color: var(--primary-color);
+color: var(--white);
+padding: -50px 0;
+}
+
+.header-flex {
+display: flex;
+justify-content: space-between;
+align-items: center;
+flex-wrap: wrap;
+}
+
+.logo {
+width: 400px;
+height: 400px;
+margin-right: 10px;
+}
+
+.site-title {
+font-size: 24px;
+margin: 10px;
+color: var(--white);
+}
+
+.nav-links {
+list-style: none;
+display: flex;
+gap: 30px;
+padding: 0;
+margin: 0;
+flex-wrap: wrap;
+}
+
+.nav-links a {
+color: var(--white);
+text-decoration: none;
+font-weight: 500;
+transition: color 0.3s;
+}
+
+.nav-links a:hover {
+color: var(--secondary-color);
+}
+
+/* ACTIVE LINK */
+.nav-links a.active {
+color: var(--secondary-color);
+font-weight: bold;
+}
+
+/* HERO SECTION */
+.hero {
+background-color: var(--primary-color);
+color: var(--white);
+padding: 100px 0;
+text-align: center;
+
+}
+
+.hero h1 {
+font-size: 42px;
+margin-top: -80px;
+}
+
+.hero h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  }
+
+.hero p {
+font-size: 18px;
+margin-top: -25px;
+}
+
+.hero-buttons .button {
+padding: 12px 25px;
+font-size: 16px;
+margin: 0 10px;
+border-radius: 5px;
+text-decoration: none;
+background-color: var(--secondary-color);
+color: var(--white);
+font-weight: bold;
+transition: background 0.3s;
+
+}
+
+.hero-buttons {
+  margin-top: 40px; /* augmente si tu veux encore plus d’espace */
+}
+
+.hero-buttons .button.secondary {
+background-color: var(--white);
+color: var(--primary-color);
+border: 2px solid var(--primary-color);
+}
+
+.hero-buttons .button:hover {
+background-color: #e66a00;
+}
+
+/* ABOUT SECTION */
+.about {
+background-color: var(--white);
+padding: 60px 0;
+text-align: center;
+}
+
+.about h2 {
+font-size: 28px;
+margin-bottom: 20px;
+text-decoration: underline;
+}
+
+.dates {
+list-style: none;
+padding: 0;
+margin-top: 20px;
+}
+
+.dates li {
+font-weight: 500;
+margin: 10px 0;
+}
+
+/* FEATURES */
+.features {
+padding: 60px 0;
+background-color: #f1f1f1;
+text-align: center;
+}
+
+.features h2 {
+font-size: 28px;
+margin-bottom: 30px;
+text-decoration: underline;
+
+}
+
+.feature-grid {
+display: flex;
+gap: 30px;
+justify-content: center;
+flex-wrap: wrap;
+}
+
+.feature {
+flex: 1 1 250px;
+background: white;
+padding: 20px;
+border-radius: 6px;
+box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.feature h3 {
+font-size: 20px;
+margin-bottom: 10px;
+color: var(--primary-color);
+}
+
+
+/* STEPS */
+.steps {
+background-color: var(--white);
+padding: 60px 0;
+
+}
+
+.steps h2 {
+text-align: center;
+margin-bottom: 30px;
+font-size: 28px;
+text-decoration: underline;
+}
+
+.steps ol {
+max-width: 800px;
+margin: auto;
+font-size: 16Lpx;
+margin-left: 100px;
+}
+
+.steps li {
+margin-bottom: 15px;
+margin-left: 120px;
+}
+
+/* CONTACT */
+.contact {
+background-color: #ffffff;
+padding: 60px 0;
+text-align: center;
+}
+
+.contact h2 {
+font-size: 28px;
+margin-bottom: 15px;
+text-decoration: underline;
+}
+
+.contact a {
+color: var(--primary-color);
+font-weight: 500;
+text-decoration: none;
+}
+
+.contact a:hover {
+text-decoration: underline;
+}
+
+h2 {
+margin-top: 30px;
+font-size: 26px;
+text-align: center;
+color: var(--primary-color);
+}
+
+form {
+background: var(--white);
+padding: 30px;
+margin-top: 20px;
+border-radius: 8px;
+box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+max-width: 600px;
+margin-left: auto;
+margin-right: auto;
+}
+
+form label {
+display: block;
+margin-top: 20px;
+font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="file"],
+form select {
+width: 100%;
+select {
+  font-size: 22px;
+  padding: 12px;
+  height: auto;
+}
+
+padding: 10px;
+margin-top: 5px;
+border-radius: 5px;
+border: 1px solid #ccc;
+box-sizing: border-box;
+}
+
+form button.button {
+background-color: var(--primary-color);
+color: var(--white);
+padding: 12px 20px;
+margin-top: 30px;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+font-size: 16px;
+transition: background 0.3s;
+display: block;
+width: 100%;
+}
+
+form button.button:hover {
+background-color: #f57c00;
+}
+
+#timer {
+  font-size: 1.5rem;
+  text-align: center;
+  margin: 20px auto;
+  background-color: #f2f2f2;
+  padding: 10px 20px;
+  border-radius: 10px;
+  max-width: 300px; /* ✅ Ne dépasse pas sur mobile */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Bonus pour améliorer encore sur petits écrans */
+@media (max-width: 600px) {
+  #timer {
+    font-size: 1.2rem;
+    padding: 8px 16px;
+    max-width: 90%; /* ✅ Adaptatif sur très petits écrans */
+  }
+}
+
+
+
+/* FOOTER */
+.footer {
+background-color: var(--primary-color);
+color: white;
+text-align: center;
+padding: 20px 0;
+font-size: 14px;
+}
+
+.footer a {
+color: var(--secondary-color);
+text-decoration: none;
+font-weight: 500;
+}
+
+/* QUIZ MODAL */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #444;
+  cursor: pointer;
+  text-decoration: none;
+}
+.quiz-box {
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  max-width: 600px;
+  margin: 60px auto;
+}
+.quiz-question h2 {
+  margin-bottom: 30px;
+  color: #002b5c;
+}
+.quiz-question p {
+  margin-bottom: 15px;
+}
+.quiz-question input[type="text"] {
+  width: 100%;
+  padding: 12px;
+  font-size: 15px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.quiz-question button {
+  padding: 14px 27px;
+  font-size: 15px;
+  margin-top: 15px;
+  background-color: #f57c00;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.quiz-question button:hover {
+  background-color: #e66a00;
+}
+select {
+  font-size: 16px;
+  padding: 12px;
+  height: auto;
+}
+
+select:focus {
+  border-color: var(--secondary-color);
+  outline: none;
+  box-shadow: 0 0 5px rgba(245, 124, 0, 0.5);
+}
+
+/* Boutons navigation formulaire de vote */
+button.button,
+#voteForm button,
+.form-page button {
+  background-color: #f57c00;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+button.button:hover,
+#voteForm button:hover,
+.form-page button:hover {
+  background-color: #e66a00;
+  transform: scale(1.05);
+}
+
+button[type="submit"] {
+  background-color: #002b5c;
+}
+
+button[type="submit"]:hover {
+  background-color: #001c48;
+}
+
+/* Boutons navigation formulaire de vote */
+button.button,
+#voteForm button,
+.form-page button {
+  background-color: #e66a00;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+button.button:hover,
+#voteForm button:hover,
+.form-page button:hover {
+  background-color: #e66a00;
+  transform: scale(1.05);
+}
+
+button[type="submit"] {
+  background-color: #002b5c;
+}
+
+button[type="submit"]:hover {
+  background-color: #001c48;
+}
+
+/* Espacement et style des candidats */
+#voteForm fieldset {
+  margin-bottom: 25px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #fdfdfd;
+}
+
+#voteForm legend {
+  font-size: 16px;
+  color: #002b5c;
+  margin-bottom: 10px;
+}
+
+#voteForm label {
+  display: block;
+  margin: 10px 0 5px 0;
+  font-size: 15px;
+  padding-left: 5px;
+}
+
+/* Minuteur stylé au centre */
+#timer {
+  font-size: 18px;
+  font-weight: bold;
+  color: #f57c00;
+  text-align: center;
+  margin: 30px auto;
+  margin-left: 400px;
+  padding: 15px 25px;
+  background-color: rgba(255, 244, 230, 0.9);
+  border: 2px dashed #f57c00;
+  border-radius: 10px;
+  width: fit-content;
+  animation: pulse 1s infinite ease-in-out;
+}
+
+/* Effet battement léger */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.calendar-section {
+  margin-top: 60px;
+  text-align: center;
+}
+
+.calendar-table {
+  width: 100%;
+  max-width: 800px;
+  margin: 30px auto;
+  border-collapse: collapse;
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.calendar-table th {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 15px;
+  font-size: 18px;
+  text-align: center;
+}
+
+.calendar-table td {
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+  font-size: 16px;
+  color: #333;
+  text-align: center;
+}
+
+.calendar-table tr:hover {
+  background-color: #f5f5f5;
+}
+
+@media (max-width: 768px) {
+  .calendar-table th, .calendar-table td {
+    font-size: 15px;
+    padding: 10px;
+  }
+}
+
+

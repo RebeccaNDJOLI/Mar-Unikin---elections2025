@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vote – M.A.R UNIKIN</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="container header-flex">
+      <div class="logo-title">
+        <a href="index.html">
+          <img src="Logo.png" alt="Logo M.A.R UNIKIN" class="logo" />
+        </a>
+      </div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="enroll.html">S’enrôler</a></li>
+          <li><a href="vote.html" class="active">Voter</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Quiz de Sécurité -->
+    <div id="quiz-vote">
+      <div class="quiz-box">
+        <a href="index.html" class="close-btn" title="Quitter">&times;</a>
+        <div id="question-1" class="quiz-question">
+          <h2>Question 1</h2>
+          <p>Combien de catégories de membre comprend la MAR asbl selon l'article 9, chapitre 1 du statut et ROI ?</p>
+          <input type="text" id="answer1" placeholder="Entrez votre réponse exacte..." required />
+          <button onclick="goToQuestion(2)">Suivant ➡️</button>
+        </div>
+        <div id="question-2" class="quiz-question" style="display:none;">
+          <h2>Question 2</h2>
+          <p>Conformément à l'article 23, L'Assemblée Générale peut-elle être convoquée en session extraordinaire ?</p>
+          <label><input type="radio" name="answer2" value="Oui" required> Oui</label><br>
+          <label><input type="radio" name="answer2" value="Non"> Non</label><br>
+          <button onclick="validateQuiz()">Valider ✅</button>
+          <p id="quizError" style="color:red; display:none;">❌ Mauvaise réponse. Accès refusé.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Formulaire Informations Personnelles -->
+    <div id="form-page-1" class="form-page" style="display:none;">
+      <h2>Formulaire de vote – Informations personnelles</h2>
+      <p><strong>⚠️ Vous disposez de six minutes et d'une seule chance pour remplir ce formulaire. Si vous quittez ou rechargez la page, votre session sera perdue.</strong></p>
+      <div id="timer" class="timer">⏳ Temps restant : 360s</div>
+
+      <form id="voteForm" method="POST" action="https://script.google.com/macros/s/AKfycbxIn9zSN3bekYMMBo5dKqPcixo1Lq4EsRvd02tqg6rTY0VXLEbtaeW-sZ847BICN5R4bQ/exec">
+        <label>N° électeur :</label>
+        <input type="text" name="nom" required>
+
+        <label>Nom :</label>
+        <input type="text" name="nom" required>
+
+
+        <label>Post-Nom :</label>
+        <input type="text" name="Post-Nom" required>
+
+        <label>Prénom :</label>
+        <input type="text" name="prenom" required>
+
+        <label>Genre :</label>
+        <select name="Genre" required>
+          <option value="">-- Sélectionnez --</option>
+          <option value="Masculin">Masculin</option>
+          <option value="Féminin">Féminin</option>
+        </select>
+
+        <label>Email :</label>
+        <input type="email" name="email" required>
+
+        <label>Téléphone :</label>
+        <input type="tel" name="Téléphone" required>
+
+        <label>Êtes-vous étudiant(e) ?</label>
+        <select name="statut" required>
+          <option value="">-- Sélectionnez --</option>
+          <option value="Oui">Oui</option>
+          <option value="Non">Non</option>
+        </select>
+
+        <label>Niveau d'étude :</label>
+        <select name="niveau" required>
+          <option value="">-- Sélectionnez --</option>
+          <option value="Licence 1 (G1)">Licence 1 (G1)</option>
+          <option value="Licence 2 (G2)">Licence 2 (G2)</option>
+          <option value="Licence 3 (G3)">Licence 3 (G3)</option>
+          <option value="Master 1">Master 1</option>
+          <option value="Master 2">Master 2</option>
+          <option value="Doctorat">Doctorat</option>
+        </select>
+
+        <label>Faculté :</label>
+        <input type="text" name="faculte" required>
+
+        <div class="form-buttons">
+          <div style="margin-top: 30px; text-align: center; margin-left: 23px;">
+          <button type="button" onclick="goToPage(2)">Suivant ➡️</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Formulaire Vote des candidats -->
+    <div id="form-page-2" class="form-page" style="display:none;">
+      <h2>Formulaire de vote – Choix des candidats</h2>
+      <p><strong>⚠️ Vous disposez de six minutes et d'une seule chance pour remplir ce formulaire. Si vous quittez ou rechargez la page, votre session sera perdue.</strong></p>
+      <div id="timer" class="timer">⏳ Temps restant : 360s</div>
+      <form id="voteCandidatesForm" method="POST" action="https://script.google.com/macros/s/AKfycbxIn9zSN3bekYMMBo5dKqPcixo1Lq4EsRvd02tqg6rTY0VXLEbtaeW-sZ847BICN5R4bQ/exec">
+        <fieldset>
+          <legend>Présidence</legend>
+          <label><input type="radio" name="presidence" value="17 - DEKA BOTUKA SAMY" required> 17 - DEKA BOTUKA SAMY</label><br>
+          <label><input type="radio" name="presidence" value="3 - KADIMA ASHER"> 3 - KADIMA ASHER</label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Vice-Présidence</legend>
+          <label><input type="radio" name="vicepresidence" value="12 - HUGUES KABISAYI" required> 12 - HUGUES KABISAYI</label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Secrétariat Général</legend>
+          <label><input type="radio" name="secretariat" value="25 - KABAKELE NTIMA DANIEL" required> 25 - KABAKELE NTIMA DANIEL</label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Vice-Secrétaire</legend>
+          <label><input type="radio" name="vice_secretariat" value="16 - NGEKENE NZIEME ROGER" required> 16 - NGEKENE NZIEME ROGER</label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Trésorerie</legend>
+          <label><input type="radio" name="tresorerie" value="9 - BOUNO SEPHORA" required> 9 - BOUNO SEPHORA</label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Affaires Para-Académiques</legend>
+          <label><input type="radio" name="para_acad" value="21 - KALUMBA DIEUDONNÉ" required> 21 - KALUMBA DIEUDONNÉ</label><br>
+        </fieldset>
+
+        <label>Importer votre carte électeur ou confirmation de votre enrôlement:</label>
+        <input type="file" name="justificatif" accept=".pdf,.jpg,.jpeg,.png" required>
+
+        <div style="margin-top: 30px; text-align: center; margin-left: 23px;">
+          <button type="submit">🗳️ Voter</button>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 Comité Électoral M.A.R UNIKIN – Tous droits réservés</p>
+      <p><a href="mentions-legales.html">Mentions légales</a> | <a href="confidentialite.html">Politique de confidentialité</a></p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const form = document.getElementById("voteCandidatesForm");
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+    
+        const formData = new FormData(form);
+        const data = {};
+        formData.forEach((value, key) => {
+          data[key] = value;
+        });
+    
+        fetch(form.action, {
+          method: "POST",
+          body: new URLSearchParams(data),
+        })
+        .then(response => response.json())
+        .then(response => {
+          if (response.result === "success") {
+            alert("✅ Merci pour votre vote !");
+            window.location.href = "index.html";
+          } else {
+            alert("❌ Une erreur est survenue. Veuillez réessayer.");
+          }
+        })
+        .catch(error => {
+          console.error("Erreur lors de l'envoi :", error);
+          alert("⚠️ Une erreur s’est produite. Veuillez réessayer plus tard.");
+        });
+      });
+    });
+    </script>    
+</body>
+</html>

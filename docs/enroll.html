@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Enrôlement – M.A.R UNIKIN</title>
+  <link rel="icon" type="favicon.ico" href="image/x-icon">
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="enroll.js"></script>
+</head>
+<body>
+  <header class="header">
+    <div class="container header-flex">
+      <div class="logo-title">
+        <a href="index.html">
+          <img src="Logo.png" alt="Logo M.A.R UNIKIN" class="logo" />
+        </a>
+      </div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="enroll.html" class="active">S’enrôler</a></li>
+          <li><a href="vote.html">Voter</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Quiz -->
+    <div id="quiz-section">
+      <div class="quiz-box">
+        <a href="index.html" class="close-btn" title="Quitter">&times;</a>
+        <div class="quiz-question">
+          <h2>Questions de sécurité</h2>
+          <p><strong>1. En quelle année Ariel Makiona, le créateur de la M.A.R Unikin, a-t-il fini au Collège Saint-Raphaël ?</strong></p>
+          <input type="text" id="quizAnswer" placeholder="Entrez votre réponse exacte..." required />
+
+          <p><strong>2. Quel est le prénom du professeur du cours d’EVIE au Collège Saint-Raphaël ?</strong></p>
+          <input type="text" id="prof-evie" name="prof-evie" placeholder="Prof..." required />
+
+          <p><strong>3. Quel est le nom du nouveau Coordonnateur Exécutif de La M.A.R Asbl ?</strong></p>
+          <input type="text" id="coordo-mar" name="coordo-mar" placeholder="Réponse exacte..." required />
+
+          <button onclick="checkAnswer()">Valider</button>
+          <p id="quizError" style="color:red; display:none; text-align:center;">❌ Une ou plusieurs réponses sont incorrectes. Accès refusé.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Formulaire -->
+    <div id="form-section" style="display:none;">
+      <h2>Formulaire d’enrôlement</h2>
+      <p><strong>⚠️ Vous disposez de deux minutes et d'une seule chance pour remplir ce formulaire. Si vous quittez ou rechargez la page, votre session sera perdue.</strong></p>
+      <div id="timer">⏳ Temps restant : 240s</div>
+
+      <iframe 
+      src="https://docs.google.com/forms/d/e/1FAIpQLSdj9Y--RdQmm2zXzAP8rg6qfpuCDm69GCftZhoMCrAUiBoy4g/viewform?embedded=true" 
+      width="100%" 
+      height="1200" 
+      frameborder="0" 
+      marginheight="0" 
+      marginwidth="0">
+      Chargement…
+    </iframe>
+    <!-- FIN DU FORM -->
+  </main>
+       
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 M.A.R UNIKIN – Tous droits réservés</p>
+      <p><a href="mentions-legales.html">Mentions légales</a> | <a href="confidentialite.html">Politique de confidentialité</a></p>
+    </div>
+  </footer>
+
+  <!-- CORRECTION DU SCRIPT -->
+  <script>
+    function checkAnswer() {
+      const q1 = document.getElementById('quizAnswer').value.trim();
+      const q2 = document.getElementById('prof-evie').value.trim();
+      const q3 = document.getElementById('coordo-mar').value.trim();
+
+      const ok1 = "2010-2011";
+      const ok2 = "Prof Sacré";
+      const ok3 = "Olivier Dondo";
+
+      if (q1 === ok1 && q2 === ok2 && q3 === ok3) {
+        document.getElementById('quiz-section').style.display = 'none';
+        document.getElementById('form-section').style.display = 'block';
+        if (typeof startTimer === "function") {
+          startTimer();
+        }
+      } else {
+        document.getElementById('quizError').style.display = 'block';
+      }
+    }
+  </script>
+</body>
+</html>
